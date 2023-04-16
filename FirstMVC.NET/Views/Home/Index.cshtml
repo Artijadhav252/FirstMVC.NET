@@ -1,0 +1,39 @@
+﻿@model List<Student>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <table class="table pre-primary">
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>EmailId</td>
+                <td>Gemder</td>
+                <td>MobileNumber</td>
+                <td>Update</td>
+                <td>Delete</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model)
+            {
+                <tr>
+                    <td>@student.Id</td>
+                    <td>@student.FirstName</td>
+                    <td>@student.LastName</td>
+                    <td>@student.EmailId</td>
+                    <td>@student.Gender</td>
+                    <td>@student.MobileNumber</td>
+                    <td><a href="Home/Update/@student.Id">Update</a></td>
+                    <td><a href="/Home/Delete/@student.Id">Delete</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a href="Home/Create/" class="btn btn=primary">Create Student</a>
+</body>
+</html>
